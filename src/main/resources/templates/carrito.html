@@ -134,7 +134,7 @@
 								<div class="cart_extra_title">My shopping</div>
 									<div  class="cart_extra_total_list">
 										<table class="table">
-											<th>
+											<tr>
 												<td>
 													Numero  
 												</td>
@@ -148,12 +148,12 @@
 													Tipo 
 												</td>
 												
-											</th>
+											</tr>
 											<tr ng-repeat="c in carritosFinalizados">
 												<td>{{c.id}}</td>
-												<td>{{c.fechaCreacion.substr(6,13) | date:'dd/MM/yyyy'}}</td>
+												<td>{{c.fechaCreacion | date:'yyyy-MM-dd'}}</td>
 												<td>{{c.estado}}</td>
-												<td>{{c.tipo}}</td>
+												<td>{{c.tipo.descripcion}}</td>
 											</tr>
 	
 										</table>
