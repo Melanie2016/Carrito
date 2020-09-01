@@ -38,24 +38,6 @@
 			
 			</ul>
 		</nav>
-
-		<!-- Search -->
-		<div class="search">
-			<form action="#" class="search_form" id="sidebar_search_form">
-				<input type="text" class="search_input" placeholder="Search" required="required">
-				<button class="search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-			</form>
-		</div>
-
-		<!-- Cart -->
-		<div class="cart d-flex flex-row align-items-center justify-content-start">
-			<div class="cart_icon"><a href="cart.html">
-				<img src="images/bag.png" alt="">
-				<div class="cart_num">2</div>
-			</a></div>
-			<div class="cart_text">bag</div>
-			<div class="cart_price">$39.99 (1)</div>
-		</div>
 	</div>
 
 	<!-- Home -->
@@ -150,22 +132,33 @@
 						<div class="cart_extra cart_extra_1">
 							<div class="cart_extra_content cart_extra_coupon">
 								<div class="cart_extra_title">My shopping</div>
-									<table>
-										<th>
-											<td>
-												Fecha 
-											</td>
-											<td>
-												Estado 
-											</td>
-											
-										</th>
-										<tr ng-repeat="c in carritosFinalizados">
-											<td>{{c.fechaCreacion}}</td>
-											<td>{{c.estado}}</td>
-										</tr>
-
-									</table>
+									<div  class="cart_extra_total_list">
+										<table class="table">
+											<th>
+												<td>
+													Numero  
+												</td>
+												<td>
+													Fecha 
+												</td>
+												<td>
+													Estado 
+												</td>
+												<td>
+													Tipo 
+												</td>
+												
+											</th>
+											<tr ng-repeat="c in carritosFinalizados">
+												<td>{{c.id}}</td>
+												<td>{{c.fechaCreacion.substr(6,13) | date:'dd/MM/yyyy'}}</td>
+												<td>{{c.estado}}</td>
+												<td>{{c.tipo}}</td>
+											</tr>
+	
+										</table>
+									</div>
+									
 							</div>
 						</div>
 					</div>
